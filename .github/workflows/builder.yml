@@ -1,0 +1,16 @@
+name: Builder
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+      - name: Check flake
+        run: nix flake check
+      - name: Check formatting
+        run: nix fmt . -- --check
+      - name: Build system
+        run: nix build .#nixosConfigurations.foras.config.system.build.toplevel --dry-run

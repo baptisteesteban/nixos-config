@@ -1,0 +1,79 @@
+/* https://github.com/cgoesche/dotfiles/blob/main/waybar/.config/waybar/bars/spectrum/style.css with modifications */
+
+window#waybar {
+    background-color: transparent;
+}
+
+window > box {
+    background-color: @surface0;
+    padding: 0px 5px;
+    margin: 5px 100px 0px 100px;
+    border-radius: 100px;
+}
+
+* {
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0;
+}
+
+#battery, #cpu, #memory, #disk, #clock, #network {
+    color: @text;
+    background-color: @surface0;
+    border-radius: 100px;
+    padding: 0px 10px;
+    margin: 6px 2px;
+}
+
+#workspaces {
+    border-radius: 100px;
+    margin: 6px 2px;
+    padding: 0px 10px;
+}
+
+#workspaces button {
+    color: @subtext0;
+    padding: 0px 5px;
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+#workspaces button.empty {
+    color: @subtext1;
+}
+
+#workspaces button:hover {
+    color: @sky;
+    background-color: @surface1;
+}
+
+@keyframes blink {
+    to {
+        color: @text;
+    }
+}
+
+tooltip {
+    padding: 25px;
+    background-color: @surface0;
+    color: @text;
+    font-family: CartographCF Nerd Font;
+    border-radius: 20px;
+}
+
+tooltip label {
+    padding: 15px;
+    color: @subtext0;
+}
+
+#tray {
+    margin: 6px 2px;
+    padding: 0px 10px;
+    border-radius: 0;
+}
