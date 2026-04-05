@@ -27,7 +27,7 @@ in {
             natural_scroll = true;
           };
         };
-        exec-once = ["hypridle" "hyprpaper"];
+        exec-once = ["hypridle" "hyprpaper" "swayosd-server"];
       };
     };
 
