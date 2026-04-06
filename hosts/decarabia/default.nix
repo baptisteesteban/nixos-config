@@ -1,0 +1,26 @@
+{pkgs, ...}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  boot.loader.grub.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # System level modules
+  my.nix.enable = true;
+  my.networkmanager.enable = true;
+  my.sddm.enable = true;
+  my.users.enable = true;
+  my.hyprland.enable = true;
+
+  # Hostname definition
+  networking.hostName = "decarabia";
+
+  # Local
+  time.timeZone = "Europe/Paris";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console.keyMap = "fr";
+
+  # System version
+  system.stateVersion = "25.11";
+}

@@ -33,6 +33,17 @@
     ...
   }: let
     system = "x86_64-linux";
+    baptouHomeManagerConfig = {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.baptou = {
+        imports = [
+          ./modules/home
+          ./home/baptou
+          catppuccin-nix.homeModules.catppuccin
+        ];
+      };
+    };
   in {
     nixosConfigurations = {
       foras = nixpkgs.lib.nixosSystem {
@@ -40,19 +51,18 @@
         modules = [
           ./hosts/foras
           ./modules/system
-
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.baptou = {
-              imports = [
-                ./modules/home
-                ./home/baptou
-                catppuccin-nix.homeModules.catppuccin
-              ];
-            };
-          }
+          baptouHomeManagerConfig
+        ];
+      };
+
+      decarabia = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/decarabia
+          ./modules/system
+          home-manager.nixosModules.home-manager
+          baptouHomeManagerConfig
         ];
       };
     };
