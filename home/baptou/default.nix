@@ -20,6 +20,7 @@
   my.home.lazygit.enable = true;
 
   # Development
+  my.home.basedev.enable = true;
   my.home.python.enable = true;
   my.home.vscode.enable = true;
 
