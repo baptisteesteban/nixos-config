@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -12,6 +13,7 @@
   my.sddm.enable = true;
   my.users.enable = true;
   my.hyprland.enable = true;
+  my.virtualisation.enable = true;
 
   # Hostname definition
   networking.hostName = "decarabia";
