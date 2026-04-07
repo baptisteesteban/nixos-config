@@ -56,15 +56,15 @@
         ];
       };
 
-      decarabia = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/decarabia
-          ./modules/system
-          home-manager.nixosModules.home-manager
-          baptouHomeManagerConfig
-        ];
-      };
+      #decarabia = nixpkgs.lib.nixosSystem {
+      #  inherit system;
+      #  modules = [
+      #    ./hosts/decarabia
+      #    ./modules/system
+      #    home-manager.nixosModules.home-manager
+      #    baptouHomeManagerConfig
+      #  ];
+      #};
     };
 
     formatter.${system} = let
