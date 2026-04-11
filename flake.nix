@@ -17,6 +17,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-utils = {
+      type = "github";
+      repo = "flake-utils";
+      owner = "numtide";
+    };
+
     catppuccin-nix = {
       type = "github";
       repo = "nix";
@@ -27,8 +33,10 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
+    flake-utils,
     catppuccin-nix,
     ...
   }: let
@@ -42,6 +50,7 @@
           ./home/baptou
           catppuccin-nix.homeModules.catppuccin
         ];
+        home.packages = [self.packages.${system}.slicer];
       };
     };
   in {
@@ -66,6 +75,8 @@
         ];
       };
     };
+
+    packages.${system} = let pkgs = import nixpkgs {inherit system;}; in flake-utils.lib.flattenTree (import ./pkgs {inherit pkgs;});
 
     formatter.${system} = let
       pkgs = import nixpkgs {inherit system;};
