@@ -7,5 +7,6 @@
     ./users.nix
     ./hyprland.nix
     ./virtualisation.nix
+    ./nvidia.nix
   ];
 }

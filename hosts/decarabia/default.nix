@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -16,6 +20,18 @@
   my.users.enable = true;
   my.hyprland.enable = true;
   my.virtualisation.enable = true;
+  my.nvidia.enable = true;
+
+  # NVIDIA Specific
+  hardware.nvidia.prime = {
+    intelBusId = "PCI:0:2.0";
+    nvidiaBusId = "PCI:1:0.0";
+  };
+
+  # Systemwide environment variables
+  environment.variables = {
+    AQ_DRM_DEVICES = "/dev/dri/card1"; # Only run graphic interface in integrated GPU
+  };
 
   # Hostname definition
   networking.hostName = "decarabia";
