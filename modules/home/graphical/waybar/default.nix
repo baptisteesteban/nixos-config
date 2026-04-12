@@ -31,10 +31,10 @@ in {
 
             "network" = {
               interval = 5;
-              format-ethernet = " {ifname}";
-              format-wifi = " {essid}";
-              format-disabled = "";
-              format-disconnected = " Disconnected";
+              format-ethernet = "󰈀  {ifname}";
+              format-wifi = "  {essid}";
+              format-disabled = "";
+              format-disconnected = "󰅛 Disconnected";
               tooltip-format = "{ipaddr}/{cidr}";
             };
 
@@ -44,30 +44,35 @@ in {
             };
 
             "memory" = {
-              format = " {used} / {total} GB";
+              format = "  {used} / {total} GB";
               interval = 5;
             };
 
             "disk" = {
               interval = 30;
-              format = " {percentage_used} %";
+              format = " {percentage_used}%";
             };
 
             "clock" = {
-              format = " {:%H:%M}";
+              format = "󱑂 {:%H:%M}";
               format-alt = " {:%A %d %B %Y}";
               tooltip = false;
             };
 
             "battery" = {
-              format = " {capacity}%";
+              format = "{icon}  {capacity}%";
+              format-icons = ["" "" "" "" ""];
+              states = {
+                "warning" = 30;
+                "critical" = 15;
+              };
             };
 
             "hyprland/workspaces" = {
               format = "{icon} {name}";
               format-icons = {
-                visible = "";
-                default = "";
+                visible = "󰻂 ";
+                default = " ";
               };
             };
           }
@@ -76,7 +81,7 @@ in {
         style = builtins.readFile "${./waybar.css}";
       };
 
-      home.packages = with pkgs; [font-awesome];
+      home.packages = with pkgs; [nerd-fonts.adwaita-mono];
       services.network-manager-applet.enable = true;
     })
     (lib.mkIf (cfg.enable && cfg_hypr.enable) {
