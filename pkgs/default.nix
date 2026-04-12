@@ -1,3 +1,3 @@
 {pkgs}: {
-  slicer = pkgs.callPackage ./slicer {};
+  #slicer = pkgs.callPackage ./slicer {};
 }

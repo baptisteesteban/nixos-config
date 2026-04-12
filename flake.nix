@@ -50,7 +50,7 @@
           ./home/baptou
           catppuccin-nix.homeModules.catppuccin
         ];
-        home.packages = [self.packages.${system}.slicer];
+        #home.packages = [self.packages.${system}.slicer];
       };
     };
   in {
