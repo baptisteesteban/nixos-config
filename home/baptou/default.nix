@@ -23,6 +23,7 @@
   my.home.basedev.enable = true;
   my.home.python.enable = true;
   my.home.vscode.enable = true;
+  my.home.z80.enable = true;
 
   # Browser
   my.home.brave.enable = true;
