@@ -21,5 +21,9 @@ in {
     };
 
     environment.systemPackages = with pkgs; [cudatoolkit nvtopPackages.nvidia];
+
+    environment.variables = {
+      CUDA_PATH = "${pkgs.cudatoolkit}";
+    };
   };
 }
