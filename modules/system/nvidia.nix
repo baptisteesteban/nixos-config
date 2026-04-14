@@ -9,13 +9,15 @@ in {
   options.my.nvidia.enable = lib.mkEnableOption "Enable NVIDIA in system";
 
   config = lib.mkIf cfg.enable {
-    hardware.graphics.enable = true;
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = ["modesetting" "nvidia"];
 
     hardware.nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-      modesetting.enable = true;
+      modesetting.enable = false;
+      powerManagement = {
+        enable = true;
+        finegrained = false;
+      };
       open = true;
       nvidiaSettings = true;
     };

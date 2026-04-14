@@ -22,10 +22,9 @@
   my.virtualisation.enable = true;
   my.nvidia.enable = true;
 
-  # NVIDIA Specific
-  hardware.nvidia.prime = {
-    intelBusId = "PCI:0:2.0";
-    nvidiaBusId = "PCI:1:0.0";
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
   # Systemwide environment variables
