@@ -9,7 +9,7 @@
       };
 
       lre-proxyjump = {
-        host = "*.lre.epita.fr !ssh.lre.epita.fr !gitlab.lre.epita..fr";
+        host = "*.lre.epita.fr !ssh.lre.epita.fr !gitlab.lre.epita.fr";
         proxyJump = "ssh.lre.epita.fr";
       };
     };
