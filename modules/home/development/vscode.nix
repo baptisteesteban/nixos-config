@@ -19,6 +19,8 @@ in {
         extensions = with pkgs.vscode-extensions; [
           jnoortheen.nix-ide
           github.copilot-chat
+          llvm-vs-code-extensions.vscode-clangd
+          ms-vscode.cmake-tools
         ];
         userSettings = {
           "editor.inlineSuggest.enabled" = false;
