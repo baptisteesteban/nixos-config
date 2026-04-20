@@ -61,7 +61,7 @@ in {
 
         # Brightness
         ", XF86MonBrightnessUp, exec, swayosd-client --brightness +10"
-        ", XF86MonBrightnessDown, exec, swayosd-client --brightness +10"
+        ", XF86MonBrightnessDown, exec, swayosd-client --brightness -10"
 
         # Resize window
         "$mod ALT, right, resizeactive, 10 0"
