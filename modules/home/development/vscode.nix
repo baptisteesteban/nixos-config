@@ -16,12 +16,22 @@ in {
       mutableExtensionsDir = false;
       profiles.default = {
         enableUpdateCheck = false;
-        extensions = with pkgs.vscode-extensions; [
-          jnoortheen.nix-ide
-          github.copilot-chat
-          llvm-vs-code-extensions.vscode-clangd
-          ms-vscode.cmake-tools
-        ];
+        extensions = let
+          imanolea.z80-asm = {
+            name = "z80-asm";
+            publisher = "imanolea";
+            version = "0.0.9";
+            sha256 = "sha256-uiSEZg9aSMRwdBWAyNtfk9z+3TPflWAv7SKy6qdhvWw=";
+          };
+        in
+          with pkgs.vscode-extensions;
+            [
+              jnoortheen.nix-ide
+              github.copilot-chat
+              llvm-vs-code-extensions.vscode-clangd
+              ms-vscode.cmake-tools
+            ]
+            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
           "editor.inlineSuggest.enabled" = false;
           "github.copilot.inlineSuggest.enable" = false;
