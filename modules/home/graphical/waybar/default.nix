@@ -61,7 +61,11 @@ in {
 
             "battery" = {
               format = "{icon}  {capacity}%";
-              format-icons = ["" "" "" "" ""];
+              interval = 10;
+              format-icons = {
+                default = ["" "" "" "" ""];
+                charging = ["󰚥"];
+              };
               states = {
                 "warning" = 30;
                 "critical" = 15;
