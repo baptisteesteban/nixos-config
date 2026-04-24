@@ -8,6 +8,11 @@ in {
   options.my.home.mako.enable = lib.mkEnableOption "Enable Mako in Home Manager";
 
   config = lib.mkIf cfg.enable {
-    services.mako.enable = true;
+    services.mako = {
+      enable = true;
+      settings = {
+        layer = "overlay";
+      };
+    };
   };
 }
