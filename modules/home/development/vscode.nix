@@ -30,6 +30,7 @@ in {
               github.copilot-chat
               llvm-vs-code-extensions.vscode-clangd
               ms-vscode.cmake-tools
+              myriad-dreamin.tinymist
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
