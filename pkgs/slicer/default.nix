@@ -61,15 +61,17 @@ in
     dontBuild = true;
 
     installPhase = ''
-      mkdir -p $out/Slicer
+      mkdir -p $out/Slicer $out/bin
       cp -r . $out/Slicer
 
+      # Desktop application
       mkdir -p $out/share/applications
-      cat > $out/share/applications/Slicer.desktop << EOF
+      cat > $out/share/applications/slicer.desktop << EOF
       [Desktop Entry]
-      Name = 3D Slicer
+      Name=3DSlicer
       Exec=$out/Slicer/Slicer
       Type=Application
-      Terminal=false
+      Categories=Utility;
+      EOF
     '';
   }

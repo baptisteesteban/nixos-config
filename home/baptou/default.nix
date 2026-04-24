@@ -48,6 +48,7 @@
     pavucontrol # Sound control
     evince # PDF Reader
     gimp # Image Processing
+    my_packages.slicer # 3D Slicer
   ];
 
   # Environment variables

@@ -41,6 +41,18 @@
     ...
   }: let
     system = "x86_64-linux";
+    nixpkgsModule = {
+      nixpkgs = {
+        overlays = [
+          (
+            self: super: {
+              my_packages = import ./pkgs {pkgs = super;};
+            }
+          )
+        ];
+        config.allowUnfree = true;
+      };
+    };
     baptouHomeManagerConfig = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
@@ -50,7 +62,6 @@
           ./home/baptou
           catppuccin-nix.homeModules.catppuccin
         ];
-        #home.packages = [self.packages.${system}.slicer];
       };
     };
   in {
@@ -62,6 +73,7 @@
           ./modules/system
           home-manager.nixosModules.home-manager
           baptouHomeManagerConfig
+          nixpkgsModule
         ];
       };
 
@@ -72,6 +84,7 @@
           ./modules/system
           home-manager.nixosModules.home-manager
           baptouHomeManagerConfig
+          nixpkgsModule
         ];
       };
     };

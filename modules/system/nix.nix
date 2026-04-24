@@ -22,9 +22,5 @@ in {
         options = "--delete-older-than 10d";
       };
     };
-
-    nixpkgs.config = {
-      allowUnfree = true;
-    };
   };
 }
