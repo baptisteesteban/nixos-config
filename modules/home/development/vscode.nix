@@ -31,6 +31,7 @@ in {
               llvm-vs-code-extensions.vscode-clangd
               ms-vscode.cmake-tools
               myriad-dreamin.tinymist
+              rust-lang.rust-analyzer
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
