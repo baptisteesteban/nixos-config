@@ -40,6 +40,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "fr";
 
+  # TODO: Remove
+  services.upower.enable = true;
+
   # System version
   system.stateVersion = "25.11";
 }

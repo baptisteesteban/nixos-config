@@ -32,6 +32,7 @@ in {
               ms-vscode.cmake-tools
               myriad-dreamin.tinymist
               rust-lang.rust-analyzer
+              marp-team.marp-vscode
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
