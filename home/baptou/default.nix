@@ -20,6 +20,7 @@
   my.home.eza.enable = true;
   my.home.fastfetch.enable = true;
   my.home.lazygit.enable = true;
+  my.home.ripgrep.enable = true;
   my.home.tokei.enable = true;
 
   # Development
