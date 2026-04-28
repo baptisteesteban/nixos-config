@@ -20,7 +20,7 @@ in {
     (lib.mkIf (cfg_bash.enable && cfg_bash.enable) {
       programs.eza.enableBashIntegration = true;
     })
-    
+
     (lib.mkIf (cfg.enable && cfg_fish.enable) {
       programs.eza.enableFishIntegration = true;
     })

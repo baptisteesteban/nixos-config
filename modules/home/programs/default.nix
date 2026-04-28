@@ -6,5 +6,6 @@
     ./eza.nix
     ./fastfetch.nix
     ./lazygit.nix
+    ./tokei.nix
   ];
 }
