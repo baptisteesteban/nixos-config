@@ -14,6 +14,7 @@
   my.home.starship.enable = true;
 
   # Programs
+  my.home.bat.enable = true;
   my.home.btop.enable = true;
   my.home.direnv.enable = true;
   my.home.fastfetch.enable = true;
