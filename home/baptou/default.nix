@@ -17,6 +17,7 @@
   my.home.bat.enable = true;
   my.home.btop.enable = true;
   my.home.direnv.enable = true;
+  my.home.eza.enable = true;
   my.home.fastfetch.enable = true;
   my.home.lazygit.enable = true;
 
