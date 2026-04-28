@@ -12,10 +12,15 @@ in {
   config = lib.mkMerge [
     (lib.mkIf cfg.enable {
       programs.eza.enable = true;
+      home.shellAliases = {
+        ls = "eza";
+      };
     })
+
     (lib.mkIf (cfg_bash.enable && cfg_bash.enable) {
       programs.eza.enableBashIntegration = true;
     })
+    
     (lib.mkIf (cfg.enable && cfg_fish.enable) {
       programs.eza.enableFishIntegration = true;
     })
