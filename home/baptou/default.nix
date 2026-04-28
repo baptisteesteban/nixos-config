@@ -10,7 +10,7 @@
   xdg.enable = true;
 
   # Shell
-  my.home.bash.enable = true;
+  my.home.fish.enable = true;
   my.home.starship.enable = true;
 
   # Programs

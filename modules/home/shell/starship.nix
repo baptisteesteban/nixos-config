@@ -5,6 +5,7 @@
 }: let
   cfg = config.my.home.starship;
   cfg_bash = config.my.home.bash;
+  cfg_fish = config.my.home.fish;
 in {
   options.my.home.starship.enable = lib.mkEnableOption "Enable Starship in Home Manager";
 
@@ -58,6 +59,10 @@ in {
 
     (lib.mkIf (cfg.enable && cfg_bash.enable) {
       programs.starship.enableBashIntegration = true;
+    })
+
+    (lib.mkIf (cfg.enable && cfg_fish.enable) {
+      programs.starship.enableFishIntegration = true;
     })
   ];
 }
