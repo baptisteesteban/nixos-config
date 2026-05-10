@@ -1,0 +1,82 @@
+{
+  flake.modules.homeManager.waybar = {pkgs, ...}: {
+    programs.waybar = {
+      enable = true;
+
+      settings = [
+        {
+          layer = "top";
+          position = "top";
+          modules-left = ["hyprland/workspaces"];
+          modules-center = ["clock"];
+          modules-right = [
+            "network"
+            "cpu"
+            "memory"
+            "disk"
+            "battery"
+            "tray"
+          ];
+
+          "network" = {
+            interval = 5;
+            format-ethernet = "󰈀  {ifname}";
+            format-wifi = "  {essid}";
+            format-disabled = "";
+            format-disconnected = "󰅛 Disconnected";
+            tooltip-format = "{ipaddr}/{cidr}";
+          };
+
+          "cpu" = {
+            format = " {usage}%";
+            interval = 5;
+          };
+
+          "memory" = {
+            format = "  {used} / {total} GB";
+            interval = 5;
+          };
+
+          "disk" = {
+            interval = 30;
+            format = " {percentage_used}%";
+          };
+
+          "clock" = {
+            format = "󱑂 {:%H:%M}";
+            format-alt = " {:%A %d %B %Y}";
+            tooltip = false;
+          };
+
+          "battery" = {
+            format = "{icon}  {capacity}%";
+            interval = 10;
+            format-icons = {
+              default = ["" "" "" "" ""];
+              charging = ["󰚥"];
+            };
+            states = {
+              "warning" = 30;
+              "critical" = 15;
+            };
+          };
+
+          "hyprland/workspaces" = {
+            format = "{icon} {name}";
+            format-icons = {
+              visible = "󰻂 ";
+              default = " ";
+            };
+          };
+        }
+      ];
+
+      style = builtins.readFile "${./waybar.css}";
+    };
+
+    home.packages = with pkgs; [nerd-fonts.adwaita-mono];
+    services.network-manager-applet.enable = true;
+
+    wayland.windowManager.hyprland.settings.exec-once = ["waybar"];
+  };
+}

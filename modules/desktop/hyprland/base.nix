@@ -1,0 +1,72 @@
+{
+  flake.modules.nixos.hyprland = {pkgs, ...}: {
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    services.libinput.enable = true;
+
+    # Here, we follow the advices here: https://wiki.hypr.land/Useful-Utilities/Must-have/
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+      kitty # Terminal
+      mako # Notification deamon
+      noto-fonts # Default fonts
+    ];
+  };
+
+  flake.modules.homeManager.hyprland = {
+    config,
+    pkgs,
+    ...
+  }: {
+    home.packages = with pkgs; [nwg-displays];
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+      settings = {
+        "$mod" = "SUPER";
+        "$mod_shift" = "SUPER_SHIFT";
+
+        # Monitors using nwg-displays
+        source = ["${config.xdg.configHome}/hypr/monitors.conf"];
+
+        dwindle = {
+          force_split = 2;
+        };
+
+        input = {
+          kb_layout = "fr";
+          touchpad = {
+            clickfinger_behavior = 1;
+            natural_scroll = true;
+          };
+        };
+      };
+    };
+
+    # Handle no monitor configuration if not yet handled by nwg-display
+    home.activation.create-hypr-monitors = ''
+      mkdir -p "${config.xdg.configHome}/hypr"
+      if [ ! -e "${config.xdg.configHome}/hypr/monitors.conf" ]; then
+        touch "${config.xdg.configHome}/hypr/monitors.conf"
+      fi
+    '';
+
+    # Handle cursor in Hyprland configuration
+    home.pointerCursor = {
+      name = "Bibata-Modern-Ice";
+      size = 24;
+      package = pkgs.bibata-cursors;
+      gtk.enable = true;
+      x11.enable = true;
+    };
+  };
+}
