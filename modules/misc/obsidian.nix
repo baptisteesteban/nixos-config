@@ -1,7 +1,7 @@
 {
-	flake.modules.homeManager.obsidian = {
-		programs.obsidian = {
-			enable = true;
-		};
-	};
+  flake.modules.homeManager.obsidian = {
+    programs.obsidian = {
+      enable = true;
+    };
+  };
 }
