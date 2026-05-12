@@ -24,6 +24,7 @@
               myriad-dreamin.tinymist
               rust-lang.rust-analyzer
               marp-team.marp-vscode
+              tamasfe.even-better-toml
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
