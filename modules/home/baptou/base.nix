@@ -6,6 +6,7 @@
     home.packages = with pkgs; [
       zip # Zip compression
       unzip # Zip decompression
+      nil # Nix language server
     ];
 
     imports = [

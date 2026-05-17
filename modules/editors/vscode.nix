@@ -29,10 +29,11 @@
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
           "editor.inlineSuggest.enabled" = false;
-          "github.copilot.inlineSuggest.enable" = false;
 
           "editor.fontFamily" = "'JetBrains Mono', 'AdwaitaMono Nerd Font', 'monospace'";
           "editor.fontLigatures" = true;
+          "nix.enableLanguageServer" = true;
+          "nix.serverPath" = "nil";
         };
       };
     };
