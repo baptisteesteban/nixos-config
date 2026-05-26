@@ -6,11 +6,6 @@
     };
 
     # Make SDDM run on wayland without X server but need for fr layout
-    services.xserver = {
-      enable = false;
-
-      #xkb.layout = cfg.keyboard_layouts;
-      xkb.layout = "fr"; # TODO: enable multiple keyboard layout
-    };
+    services.xserver.xkb.layout = "fr";
   };
 }

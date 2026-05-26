@@ -12,6 +12,7 @@
       config.flake.modules.nixos.base
       config.flake.modules.nixos.desktop
       config.flake.modules.nixos.docker
+      config.flake.modules.nixos.graphics
     ];
   };
 
@@ -28,8 +29,12 @@
     i18n.defaultLocale = "en_US.UTF-8";
     console.keyMap = "fr";
 
+    services.udev.extraRules = ''
+      SUBSYSTEM=="drm", KERNEL=="card*", KERNELS=="0000:00:02.0", SYMLINK+="dri/igpu"
+    '';
+
     environment.variables = {
-      AQ_DRM_DEVICES = "/dev/dri/card1"; # Only run graphic interface in integrated GPU
+      AQ_DRM_DEVICES = "/dev/dri/igpu"; # Only run graphic interface in integrated GPU
     };
 
     networking.hostName = "decarabia";
