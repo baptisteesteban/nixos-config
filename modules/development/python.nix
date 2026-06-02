@@ -6,6 +6,10 @@
         python-pkgs.matplotlib
         python-pkgs.ipython
         python-pkgs.notebook
+        python-pkgs.opencv-python-headless
+        python-pkgs.scikit-image
+        python-pkgs.scikit-learn
+        python-pkgs.torch
       ]))
     ];
   };
