@@ -8,6 +8,7 @@
       ltrace
       strace
       tokei
+      clang-tools
     ];
   };
 }

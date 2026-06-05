@@ -25,6 +25,9 @@
               rust-lang.rust-analyzer
               marp-team.marp-vscode
               tamasfe.even-better-toml
+              ms-vscode-remote.remote-ssh-edit
+              ms-vscode-remote.remote-ssh
+              ms-vscode.cpptools
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
