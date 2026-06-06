@@ -37,6 +37,7 @@
           "editor.fontLigatures" = true;
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nil";
+          "C_Cpp.intelliSenseEngine" = "disabled";
         };
       };
     };
