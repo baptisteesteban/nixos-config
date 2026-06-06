@@ -59,6 +59,7 @@
         config.flake.modules.homeManager.brave
         config.flake.modules.homeManager.direnv
         config.flake.modules.homeManager.fastfetch
+        config.flake.modules.homeManager.gitg
         config.flake.modules.homeManager.lazygit
         config.flake.modules.homeManager.linux-desktop
         config.flake.modules.homeManager.shell
