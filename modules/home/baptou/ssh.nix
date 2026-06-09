@@ -4,14 +4,13 @@
       enable = true;
       enableDefaultConfig = false;
 
-      matchBlocks = {
+      settings = {
         "*.lre.epita.fr" = {
-          user = "besteban";
+          User = "besteban";
         };
 
-        lre-proxyjump = {
-          host = "*.lre.epita.fr !ssh.lre.epita.fr !gitlab.lre.epita.fr";
-          proxyJump = "ssh.lre.epita.fr";
+        "*.lre.epita.fr !ssh.lre.epita.fr !gitlab.lre.epita.fr" = {
+          ProxyJump = "ssh.lre.epita.fr";
         };
       };
     };
