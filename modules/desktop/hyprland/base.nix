@@ -3,6 +3,7 @@
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
+      withUWSM = true;
     };
 
     services.libinput.enable = true;
@@ -31,6 +32,7 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      systemd.enable = false; # uwsm handles session management
       settings = {
         "$mod" = "SUPER";
         "$mod_shift" = "SUPER_SHIFT";
