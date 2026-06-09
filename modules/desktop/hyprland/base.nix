@@ -33,6 +33,7 @@
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false; # uwsm handles session management
+      configType = "hyprlang"; # To Update
       settings = {
         "$mod" = "SUPER";
         "$mod_shift" = "SUPER_SHIFT";
