@@ -4,10 +4,13 @@
       enable = true;
 
       settings = let
-        wallpaper = ../../assets/bassin_villette.jpg;
+        wallpaper_path = ../../assets/bassin_villette.jpg;
       in {
-        preload = ["${wallpaper}"];
-        wallpaper = [",${wallpaper}"];
+        wallpaper = {
+          monitor = "";
+          path = "${wallpaper_path}";
+          fit_mode = "cover";
+        };
       };
     };
 
