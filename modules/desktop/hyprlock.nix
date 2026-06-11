@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.hyprlock = {
+  flake.modules.homeManager.hyprlock = {lib, ...}: {
     programs.hyprlock = {
       enable = true;
 
@@ -59,6 +59,13 @@
       };
     };
 
-    #wayland.windowManager.hyprland.settings.bind = ["$mod, l, exec, hyprlock"];
+    wayland.windowManager.hyprland.settings.bind = [
+      {
+        _args = [
+          (lib.generators.mkLuaInline ''mod .. " + L"'')
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprlock")'')
+        ];
+      }
+    ];
   };
 }

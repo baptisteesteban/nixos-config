@@ -55,22 +55,8 @@
             force_split = 2;
           };
         };
-
-        monitor = {
-          output = "";
-          position = "auto-left";
-          scale = 1;
-        };
       };
     };
-
-    # Handle no monitor configuration if not yet handled by nwg-display
-    #home.activation.create-hypr-monitors = ''
-    #  mkdir -p "${config.xdg.configHome}/hypr"
-    #  if [ ! -e "${config.xdg.configHome}/hypr/monitors.conf" ]; then
-    #    touch "${config.xdg.configHome}/hypr/monitors.conf"
-    #  fi
-    #'';
 
     # Handle cursor in Hyprland configuration
     home.pointerCursor = {
