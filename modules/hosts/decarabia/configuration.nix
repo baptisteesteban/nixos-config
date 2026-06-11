@@ -70,6 +70,13 @@
         config.flake.modules.homeManager.obsidian
       ];
       home.packages = [config.flake.packages.x86_64-linux.slicer];
+
+      wayland.windowManager.hyprland.settings.monitor = {
+        output = "eDP-1";
+        scale = 1;
+        mode = "highres";
+        position = "auto-right";
+      };
     };
   };
 }
