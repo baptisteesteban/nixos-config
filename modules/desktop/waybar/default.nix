@@ -77,6 +77,6 @@
     home.packages = with pkgs; [nerd-fonts.adwaita-mono];
     services.network-manager-applet.enable = true;
 
-    wayland.windowManager.hyprland.settings.exec-once = ["waybar"];
+    #wayland.windowManager.hyprland.settings.exec-once = ["waybar"];
   };
 }

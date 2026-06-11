@@ -14,6 +14,6 @@
       };
     };
 
-    wayland.windowManager.hyprland.settings.exec-once = ["hyprpaper"];
+    #wayland.windowManager.hyprland.settings.exec-once = ["hyprpaper"];
   };
 }

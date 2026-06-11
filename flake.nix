@@ -21,7 +21,7 @@
       type = "github";
       repo = "nix";
       owner = "catppuccin";
-      ref = "release-25.11";
+      ref = "release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

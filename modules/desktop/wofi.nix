@@ -4,6 +4,6 @@
       enable = true;
     };
 
-    wayland.windowManager.hyprland.settings.bind = ["$mod, d, exec, wofi --show drun"];
+    #wayland.windowManager.hyprland.settings.bind = ["$mod, d, exec, wofi --show drun"];
   };
 }
