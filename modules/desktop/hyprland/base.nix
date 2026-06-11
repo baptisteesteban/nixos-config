@@ -28,8 +28,6 @@
     pkgs,
     ...
   }: {
-    home.packages = with pkgs; [nwg-displays];
-
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false; # uwsm handles session management

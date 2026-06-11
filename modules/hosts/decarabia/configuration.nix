@@ -71,12 +71,20 @@
       ];
       home.packages = [config.flake.packages.x86_64-linux.slicer];
 
-      wayland.windowManager.hyprland.settings.monitor = {
-        output = "eDP-1";
-        scale = 1;
-        mode = "highres";
-        position = "auto-right";
-      };
+      wayland.windowManager.hyprland.settings.monitor = [
+        {
+          output = "eDP-1";
+          scale = 1;
+          mode = "highres";
+          position = "auto-right";
+        }
+        {
+          output = "HDMI-A-1";
+          scale = 1;
+          position = "1920x0";
+          mode = "highres";
+        }
+      ];
     };
   };
 }
