@@ -84,6 +84,12 @@
           position = "1920x0";
           mode = "highres";
         }
+        {
+          output = "DP-3";
+          scale = 1;
+          position = "1920x0";
+          mode = "highres";
+        }
       ];
     };
   };
