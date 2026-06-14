@@ -11,6 +11,7 @@
           path = "${wallpaper_path}";
           fit_mode = "cover";
         };
+        splash = false;
       };
     };
   };
