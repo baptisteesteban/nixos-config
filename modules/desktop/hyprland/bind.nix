@@ -219,14 +219,6 @@
           ];
         }
       ];
-
-      #binde = [
-      #  # Resize window
-      #  "$mod ALT, right, resizeactive, 10 0"
-      #  "$mod ALT, left, resizeactive, -10 0"
-      #  "$mod ALT, up, resizeactive, 0 10"
-      #  "$mod ALT, down, resizeactive, 0 -10"
-      #];
     };
   };
 }
