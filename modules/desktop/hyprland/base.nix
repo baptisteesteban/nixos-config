@@ -3,6 +3,7 @@
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
+      withUWSM = true;
     };
 
     services.libinput.enable = true;
@@ -27,38 +28,33 @@
     pkgs,
     ...
   }: {
-    home.packages = with pkgs; [nwg-displays];
-
     wayland.windowManager.hyprland = {
       enable = true;
+      systemd.enable = false; # uwsm handles session management
+      configType = "lua";
       settings = {
-        "$mod" = "SUPER";
-        "$mod_shift" = "SUPER_SHIFT";
-
-        # Monitors using nwg-displays
-        source = ["${config.xdg.configHome}/hypr/monitors.conf"];
-
-        dwindle = {
-          force_split = 2;
+        mod = {
+          _var = "SUPER";
+        };
+        terminal = {
+          _var = "kitty";
         };
 
-        input = {
-          kb_layout = "fr";
-          touchpad = {
-            clickfinger_behavior = 1;
-            natural_scroll = true;
+        config = {
+          input = {
+            kb_layout = "fr";
+            touchpad = {
+              clickfinger_behavior = 1;
+              natural_scroll = true;
+            };
+          };
+
+          dwindle = {
+            force_split = 2;
           };
         };
       };
     };
-
-    # Handle no monitor configuration if not yet handled by nwg-display
-    home.activation.create-hypr-monitors = ''
-      mkdir -p "${config.xdg.configHome}/hypr"
-      if [ ! -e "${config.xdg.configHome}/hypr/monitors.conf" ]; then
-        touch "${config.xdg.configHome}/hypr/monitors.conf"
-      fi
-    '';
 
     # Handle cursor in Hyprland configuration
     home.pointerCursor = {

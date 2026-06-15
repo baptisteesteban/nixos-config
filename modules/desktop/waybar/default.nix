@@ -1,5 +1,9 @@
 {
-  flake.modules.homeManager.waybar = {pkgs, ...}: {
+  flake.modules.homeManager.waybar = {
+    pkgs,
+    lib,
+    ...
+  }: {
     programs.waybar = {
       enable = true;
 
@@ -77,6 +81,15 @@
     home.packages = with pkgs; [nerd-fonts.adwaita-mono];
     services.network-manager-applet.enable = true;
 
-    wayland.windowManager.hyprland.settings.exec-once = ["waybar"];
+    wayland.windowManager.hyprland.settings.on = {
+      _args = [
+        "hyprland.start"
+        (lib.generators.mkLuaInline ''
+          function ()
+            hl.exec_cmd("waybar")
+          end
+        '')
+      ];
+    };
   };
 }

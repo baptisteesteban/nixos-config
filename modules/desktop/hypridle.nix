@@ -1,6 +1,6 @@
 # TODO: Fix this into a better config !!!!!
 {
-  flake.modules.homeManager.hypridle = {
+  flake.modules.homeManager.hypridle = {lib, ...}: {
     services.hypridle = {
       enable = true;
       settings = {
@@ -12,7 +12,15 @@
         };
       };
     };
-
-    wayland.windowManager.hyprland.settings.exec-once = ["hypridle"];
+    wayland.windowManager.hyprland.settings.on = {
+      _args = [
+        "hyprland.start"
+        (lib.generators.mkLuaInline ''
+          function ()
+            hl.exec_cmd("hypridle")
+          end
+        '')
+      ];
+    };
   };
 }

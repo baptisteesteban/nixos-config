@@ -28,6 +28,8 @@
               ms-vscode-remote.remote-ssh-edit
               ms-vscode-remote.remote-ssh
               ms-vscode.cpptools
+              tomoki1207.pdf
+              stkb.rewrap
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {

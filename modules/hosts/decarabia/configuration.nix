@@ -46,14 +46,14 @@
       shell = pkgs.fish;
     };
 
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
   };
 
   flake.modules.nixos.baptou-decarabia = {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.baptou = {
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
       imports = [
         config.flake.modules.homeManager.baptou-base
         config.flake.modules.homeManager.brave
@@ -70,6 +70,27 @@
         config.flake.modules.homeManager.obsidian
       ];
       home.packages = [config.flake.packages.x86_64-linux.slicer];
+
+      wayland.windowManager.hyprland.settings.monitor = [
+        {
+          output = "eDP-1";
+          scale = 1;
+          mode = "highres";
+          position = "auto-right";
+        }
+        {
+          output = "HDMI-A-1";
+          scale = 1;
+          position = "1920x0";
+          mode = "highres";
+        }
+        {
+          output = "DP-3";
+          scale = 1;
+          position = "1920x0";
+          mode = "highres";
+        }
+      ];
     };
   };
 }
