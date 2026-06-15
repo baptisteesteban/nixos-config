@@ -46,14 +46,14 @@
       shell = pkgs.fish;
     };
 
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
   };
 
   flake.modules.nixos.baptou-decarabia = {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.baptou = {
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
       imports = [
         config.flake.modules.homeManager.baptou-base
         config.flake.modules.homeManager.brave
