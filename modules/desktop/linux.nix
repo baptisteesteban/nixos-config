@@ -15,6 +15,7 @@
       config.flake.modules.homeManager.hyprpaper
       config.flake.modules.homeManager.kitty
       config.flake.modules.homeManager.mako
+      config.flake.modules.homeManager.screenshot
       config.flake.modules.homeManager.swayosd
       config.flake.modules.homeManager.waybar
       config.flake.modules.homeManager.wofi
