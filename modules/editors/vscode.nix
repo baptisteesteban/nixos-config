@@ -30,6 +30,7 @@
               ms-vscode.cpptools
               tomoki1207.pdf
               stkb.rewrap
+              ms-python.python
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
