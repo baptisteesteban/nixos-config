@@ -20,6 +20,7 @@
       kitty # Terminal
       mako # Notification deamon
       noto-fonts # Default fonts
+      gtk4
     ];
   };
 
@@ -63,6 +64,14 @@
       package = pkgs.bibata-cursors;
       gtk.enable = true;
       x11.enable = true;
+    };
+
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+      ];
     };
   };
 }
