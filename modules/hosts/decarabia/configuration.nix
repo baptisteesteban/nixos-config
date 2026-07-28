@@ -13,6 +13,7 @@
       config.flake.modules.nixos.desktop
       config.flake.modules.nixos.docker
       config.flake.modules.nixos.graphics
+      config.flake.modules.nixos.nvidia
     ];
   };
 
