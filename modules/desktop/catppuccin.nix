@@ -7,6 +7,7 @@
     catppuccin = {
       enable = true;
       flavor = "mocha";
+      cache.enable = true;
 
       hyprlock.enable = false;
     };
