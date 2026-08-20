@@ -70,7 +70,7 @@
         config.flake.modules.homeManager.z80
         config.flake.modules.homeManager.obsidian
       ];
-      home.packages = [config.flake.packages.x86_64-linux.slicer];
+      #home.packages = [config.flake.packages.x86_64-linux.slicer];
 
       wayland.windowManager.hyprland.settings.monitor = [
         {
