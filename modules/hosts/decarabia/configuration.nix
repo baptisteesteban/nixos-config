@@ -69,6 +69,7 @@
         config.flake.modules.homeManager.python
         config.flake.modules.homeManager.z80
         config.flake.modules.homeManager.obsidian
+        config.flake.modules.homeManager.mines
       ];
       #home.packages = [config.flake.packages.x86_64-linux.slicer];
 
