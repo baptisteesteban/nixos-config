@@ -31,6 +31,7 @@
               tomoki1207.pdf
               stkb.rewrap
               ms-python.python
+              james-yu.latex-workshop
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
         userSettings = {
