@@ -14,6 +14,12 @@
             version = "0.0.9";
             sha256 = "sha256-uiSEZg9aSMRwdBWAyNtfk9z+3TPflWAv7SKy6qdhvWw=";
           };
+          NVIDIA.nsight-vscode-edition = {
+            name = "nsight-vscode-edition";
+            publisher = "NVIDIA";
+            version = "2026.1.38526614";
+            sha256 = "sha256-1RqZj1rBgP54xPeZaLeUHtyj2fgAxLRcq+FwyNUOfv8=";
+          };
         in
           with pkgs.vscode-extensions;
             [
@@ -33,7 +39,10 @@
               ms-python.python
               james-yu.latex-workshop
             ]
-            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [imanolea.z80-asm];
+            ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+              imanolea.z80-asm
+              NVIDIA.nsight-vscode-edition
+            ];
         userSettings = {
           "editor.inlineSuggest.enabled" = false;
 
