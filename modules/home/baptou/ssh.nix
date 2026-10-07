@@ -9,6 +9,9 @@
           User = "besteban";
         };
 
+        "gpu-worker-3.lab.lre.epita.fr" = {
+        };
+
         "*.lre.epita.fr !ssh.lre.epita.fr !gitlab.lre.epita.fr" = {
           ProxyJump = "ssh.lre.epita.fr";
         };

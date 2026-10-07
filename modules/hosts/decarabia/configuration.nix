@@ -70,6 +70,7 @@
         config.flake.modules.homeManager.z80
         config.flake.modules.homeManager.obsidian
         config.flake.modules.homeManager.mines
+        config.flake.modules.homeManager.libreoffice
       ];
       #home.packages = [config.flake.packages.x86_64-linux.slicer];
 

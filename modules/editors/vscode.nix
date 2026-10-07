@@ -38,6 +38,7 @@
               stkb.rewrap
               ms-python.python
               james-yu.latex-workshop
+              charliermarsh.ruff
             ]
             ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
               imanolea.z80-asm
