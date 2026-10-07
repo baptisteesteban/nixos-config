@@ -18,7 +18,7 @@
             name = "nsight-vscode-edition";
             publisher = "NVIDIA";
             version = "2026.1.38526614";
-            sha256 = "sha256-1RqZj1rBgP54xPeZaLeUHtyj2fgAxLRcq+FwyNUOfv8=";
+            sha256 = "sha256-hHFpd8dXMQ18jJ++egZbfsZWNGYOZTgtdE81BlwLb8E=";
           };
         in
           with pkgs.vscode-extensions;
