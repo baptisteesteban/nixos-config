@@ -14,6 +14,7 @@
       config.flake.modules.nixos.docker
       config.flake.modules.nixos.graphics
       config.flake.modules.nixos.nvidia
+      config.flake.modules.nixos.nix-ld
     ];
   };
 
